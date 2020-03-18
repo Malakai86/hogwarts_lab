@@ -1,4 +1,5 @@
 require_relative('../models/students')
+require_relative('../models/houses')
 
 student1 = Student.new({
   "first_name" => "Harry",
@@ -25,3 +26,18 @@ student3 =  Student.new({
 student1.save()
 student2.save()
 student3.save()
+
+house1 = House.new({
+  "name" => "Gryffindor",
+  "student-id" => student1.id
+  })
+
+
+
+house2 = House.new({
+  "name" => "Slytherin"
+  "student_id" => student3.id
+  })
+
+house1.save()
+house2.save()
