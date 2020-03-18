@@ -18,7 +18,7 @@ def full_name()
 end
 
 def save()
-    sql = "INSERT INTO hogwarts
+    sql = "INSERT INTO students
     (
       first_name,
       last_name,
@@ -36,7 +36,7 @@ def save()
   end
 
   def update()
-    sql = "UPDATE hogwarts
+    sql = "UPDATE students
     SET
     (
       first_name,
@@ -53,7 +53,7 @@ def save()
   end
 
   def self.find( id )
-    sql = "SELECT * FROM hogwarts
+    sql = "SELECT * FROM students
     WHERE id = $1"
     values = [id]
     student = SqlRunner.run( sql, values )
@@ -62,7 +62,7 @@ def save()
   end
 
   def self.all()
-  sql = "SELECT * FROM hogwarts"
+  sql = "SELECT * FROM students"
   student_data = SqlRunner.run( sql )
   result = student_data.map { |student_data| Student.new( student_data ) }
   return result
