@@ -1,4 +1,4 @@
-require_relative('../models/hogwarts')
+require_relative('../models/students')
 
 student1 = Student.new({
   "first_name" => "Harry",
@@ -22,6 +22,6 @@ student3 =  Student.new({
 
   })
 
-student1.save
-student2.save
-student3.save
+student1.save()
+student2.save()
+student3.save()
