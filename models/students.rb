@@ -56,9 +56,16 @@ def save()
     sql = "SELECT * FROM hogwarts
     WHERE id = $1"
     values = [id]
-    pizza = SqlRunner.run( sql, values )
+    student = SqlRunner.run( sql, values )
     result = Student.new( student.first )
     return result
   end
+
+  def self.all()
+  sql = "SELECT * FROM hogwarts"
+  student_data = SqlRunner.run( sql )
+  result = student_data.map { |student_data| Student.new( student_data ) }
+  return result
+end
 
 end
